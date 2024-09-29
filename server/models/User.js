@@ -17,8 +17,8 @@ const userSchema = new Schema(
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
-    password: {
-      type: String,
+    bookCount: {
+      type: Number,
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the bookSchema

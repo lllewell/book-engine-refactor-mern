@@ -3,7 +3,7 @@ const typeDefs = `#graphql
     _id: ID
     username: String!
     email: String!
-    password: String!
+    bookCount: Int!
     savedBooks: [Book]
   }
 
@@ -16,6 +16,11 @@ const typeDefs = `#graphql
     image: Professor
     link: String
     title: String!
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
