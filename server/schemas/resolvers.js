@@ -1,13 +1,10 @@
-const { User, bookSchema } = require('../models');
+const { User } = require('../models');
 
 const resolvers = {
     Query: {
-        users: async () => {
+        me: async () => {
             return await User.find({}).populate('savedBooks');
         },
-        savedBooks: async () => {
-            return await bookSchema.find({}).populate()
-        }
 
     }
 };
