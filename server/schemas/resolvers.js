@@ -3,8 +3,11 @@ const { User } = require('../models');
 const resolvers = {
     Query: {
         me: async () => {
-            return await User.find({}).populate('savedBooks');
+            return await User.find({});
         },
+        books: async () => {
+            return await User.find({}).populate('savedBooks');
+        }
 
     }
 };

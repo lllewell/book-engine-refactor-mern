@@ -25,6 +25,7 @@ const typeDefs = `#graphql
 
   type Query {
     me: [User]
+    books: [Book]
   }
 `;
 
