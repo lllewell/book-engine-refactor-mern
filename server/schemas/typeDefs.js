@@ -13,7 +13,7 @@ const typeDefs = `#graphql
     authors: String
     description: String!
     bookId: String!
-    image: Professor
+    image: String
     link: String
     title: String!
   }
@@ -23,9 +23,25 @@ const typeDefs = `#graphql
     user: User
   }
 
+  input saveBook  {
+    bookAuthors:  [String]
+    description: String
+    title: String
+    bookId: String
+    image: String
+    link: String
+  }
+
   type Query {
     me: [User]
     books: [Book]
+  }
+
+  type Mutations {
+    login: (email: String!, password: String!):Auth
+    addUser: (username: String!, email: String!, password: String!):Auth
+    saveBook: (input: saveBook): User
+    removeBook: (bookId: String!): User
   }
 `;
 
